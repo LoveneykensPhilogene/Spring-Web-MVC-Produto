@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Produtos</title>
+</head>
+
+<body>
+
+<div th:if="${message}" th:text="${message}" th:class="${'alert ' + alertClass}"/>
+
+<h4>Cadastro de podutos</h4>
+
+<table border="1" >
+    <tr>
+        <th>NOME</th>
+        <th>PREÇO</th>
+    </tr>
+    <tr th:each="produto : ${allProduto}">
+        <td th:text="${produto.nome}"> </td>
+        <td th:text="${produto.preco}"> </td>
+    </tr>
+</table>
+
+<br>
+
+<a href="#" th:href="@{/new-produto}">Novo produto</a>
+
+</body>
+</html>
